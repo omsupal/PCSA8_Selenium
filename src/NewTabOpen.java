@@ -12,8 +12,12 @@ public class NewTabOpen {
 
 		// it will open separate tab in chrome
 		driver.get("https://www.amazon.in/");
+		driver.findElement(By.id("twotabsearchtextbox")).sendKeys("amazom");
 		String newTab = Keys.chord(Keys.CONTROL, Keys.RETURN);
-		driver.findElement(By.linkText("Mobiles")).sendKeys(newTab);
+		driver.findElement(By.linkText("Books")).sendKeys(newTab);
+		driver.findElements(By.linkText("Books"));
+//		driver.close();
+		
 	}
 
 }

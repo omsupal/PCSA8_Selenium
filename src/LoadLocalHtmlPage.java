@@ -1,3 +1,5 @@
+import java.awt.AWTException;
+import java.awt.Robot;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -8,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class LoadLocalHtmlPage {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, AWTException {
 		System.setProperty("webdriver.chrome.driver", "./software/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("E:\\QSPIDER\\JAVA\\eclipse\\PCSA8\\HTML\\Select.html");

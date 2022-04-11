@@ -15,7 +15,7 @@ public class BlueStoneFetchSubmenues {
 		driver.get("https://www.bluestone.com/");
 		driver.manage().window().maximize();
 		Actions a = new Actions(driver);
-		List<WebElement> nav=driver.findElements(By.xpath("//ul[@class=\\\"wh-main-menu\\\"]/li"));
+		List<WebElement> nav = driver.findElements(By.xpath("//ul[@class=\\\"wh-main-menu\\\"]/li"));
 		for (WebElement list : nav) {
 			System.out.println(list.getText());
 		}

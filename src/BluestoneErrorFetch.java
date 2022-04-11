@@ -23,3 +23,5 @@ public class BluestoneErrorFetch {
 	}
 
 }
+////a[@title='Engagement Rings']/ancestor::ul[@class='odd-even-bg']/li
+////div[contains(.,'Popular Ring Types')]/parent::div[@class="col-inner"]

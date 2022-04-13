@@ -15,11 +15,20 @@ public class BlueStoneFetchSubmenues {
 		driver.get("https://www.bluestone.com/");
 		driver.manage().window().maximize();
 		Actions a = new Actions(driver);
-		List<WebElement> nav = driver.findElements(By.xpath("//ul[@class=\\\"wh-main-menu\\\"]/li"));
+		List<WebElement> nav = driver.findElements(By.xpath("//ul[@class='wh-main-menu']/li"));
 		for (WebElement list : nav) {
 			System.out.println(list.getText());
+			String menu = list.getText();
+			a.moveToElement(driver.findElement(By.xpath("//ul[@class='wh-main-menu']/li"))).perform();
+			List<WebElement> snav = driver.findElements(
+					By.xpath("//div[contains(.,'" + menu + "')]/parent::div[@class=\"col-inner\"]\r\n" + "		}"));
+			for (WebElement list2 : snav) {
+				System.out.println(list2.getText());
+			}
+
 		}
-//		a.moveToElement(driver.findElement(By.xpath("//ul[@class=\\\"wh-main-menu\\\"]/li"))).perform();
+
+//		
 
 	}
 

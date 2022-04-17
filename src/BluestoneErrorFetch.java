@@ -15,6 +15,7 @@ public class BluestoneErrorFetch {
 		a.moveToElement(driver.findElement(By.xpath("//li[@class='menuparent']"))).perform();
 		driver.findElement(By.xpath("//a[contains(.,'Kadas')]/parent::li")).click();
 		driver.findElement(By.xpath("//ul[@id=\"product_list_ui\"]/li[1]")).click();
+		
 		ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(newTab.get(1));
 		driver.findElement(By.id("buy-now")).click();

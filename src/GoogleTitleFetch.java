@@ -10,6 +10,7 @@ public class GoogleTitleFetch {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.google.com/");
 		WebElement title = driver.findElement(By.xpath("//head/title"));
+		
 		System.out.println(title.getAttribute("innerText"));
 		System.out.println(title.getAttribute(""));
 		System.out.println(title.getText());

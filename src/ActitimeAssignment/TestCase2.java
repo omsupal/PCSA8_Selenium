@@ -28,7 +28,7 @@ public class TestCase2 {
 		driver.findElement(By.name("pwd")).sendKeys("manager", Keys.ENTER);
 		driver.findElement(By.xpath("//a[@class='content reports']")).click();
 		driver.findElement(By.xpath("//span[contains(.,'Create Chart')]/ancestor::td[@class='x-table-layout-cell']")).click();
-		WebElement ele = driver.findElement(By.xpath("/html[1]/body[1]/div[7]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[4]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[3]/span[1]"));
+		WebElement ele = driver.findElement(By.xpath("//tr[1]/td[4]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[3]/span[1]"));
 		Thread.sleep(2000);
 		ele.click();
 		driver.findElement(By.xpath("//div[@class='x-form-radio-wrap']/div/img")).click();

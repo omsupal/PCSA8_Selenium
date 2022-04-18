@@ -17,17 +17,7 @@ public class TestCase2 {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", element);
 	}
-	public static boolean ExpWait(WebDriver driver, WebElement ele) {
-		WebDriverWait ww = new WebDriverWait(driver, Duration.ofSeconds(10));// explicit wait or intelligent wait
-		return ww.until(new ExpectedCondition<Boolean>() {
-
-			@Override
-			public Boolean apply(WebDriver dd) {
-				boolean dis = ele.isEnabled();
-				return dis;
-			}
-		});
-	}
+	
 	public static void main(String[] args) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "./software/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
@@ -47,7 +37,7 @@ public class TestCase2 {
 		driver.findElement(By.xpath("//span[contains(.,'Export to PDF')]/ancestor::div[@id='createChartLightbox_commitBtn']")).click();
 		WebElement pdfE=driver.findElement(By.xpath("//div[@id='createChartLightbox_commitBtn']//div[@class='buttonIcon']"));
 		ScrollView(driver, pdfE);
-		ExpWait(driver, pdfE);
+		Thread.sleep(2000);
 		pdfE.click();
 		WebElement pdfD = driver.findElement(By.xpath("//div[@id='createChartLightbox_downloadPdfBtn']"));
 		Thread.sleep(2000);

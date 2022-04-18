@@ -25,11 +25,12 @@ public class TestCase5 {
 		drop.get(2).click();
 		driver.findElement(By.xpath("//a[contains(.,'Staff Performance')]/parent::li")).click();
 		WebElement Ghtml= driver.findElement(By.xpath("//span[@id='applyReportConfiguration']"));
-		TestCase2.ScrollView(driver, Ghtml);
+//		TestCase2.ScrollView(driver, Ghtml);
 		Ghtml.click();
 		driver.findElement(By.xpath("//div[@class='addToDashboard']")).click();
 		driver.findElement(By.xpath("//input[@class='reportNameEdit inputFieldWithPlaceholder']")).sendKeys("Staff");
 		driver.findElement(By.xpath("//td[@class='saveNewConfigButton greyButton']")).click();
+		System.out.println("done");
 	}
 
 }

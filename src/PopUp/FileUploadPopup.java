@@ -20,7 +20,6 @@ public class FileUploadPopup {
 //		driver.findElement(By.id("imagesrc")).click(); --(invalid argument exception)  The input element may not support the click action 
 		Actions builder = new Actions(driver);
 		builder.moveToElement(driver.findElement(By.id("imagesrc"))).click().build().perform();
-		System.out.println("done");
 		Runtime.getRuntime().exec("E://QSPIDER//JAVA//eclipse//PCSA8//AutoItScripts//scriptupload.exe"+" "+"E:\\personel\\omkar\\documents\\PHOTO.jpg");
 
 	}

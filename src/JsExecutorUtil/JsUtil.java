@@ -1,5 +1,6 @@
 /*
- * This
+ * This script is created by Omkar Subhash Supal
+ * @copyrightby VanixDesigners
  * 
  * */
 

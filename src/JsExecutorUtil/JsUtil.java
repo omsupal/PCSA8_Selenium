@@ -1,3 +1,8 @@
+/*
+ * This
+ * 
+ * */
+
 package JsExecutorUtil;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -7,7 +12,6 @@ import org.openqa.selenium.WebElement;
 public class JsUtil {
 
 	public static void flash(WebElement element, WebDriver driver) {
-
 		String bgcolor = element.getCssValue("backgroundColor");
 		for (int i = 0; i < 500; i++) {
 			changeColor("#000000", element, driver); // 1
@@ -53,11 +57,26 @@ public class JsUtil {
 
 	public static void scrollIntoView(WebElement element, WebDriver driver) {
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
-		js.executeScript("arguments[0].scrollintoView(true);", element);
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
 	}
 
 	public static void scrollPageDown(WebDriver driver) {
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+	}
+	
+	public static void elementClick(WebDriver driver, String path) {
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("document.getElementById("+path+").click();");
+	}
+	
+	public static void creatAlert(WebDriver driver) {
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("window.alert('Create a Alert');");
+	}
+	
+	public static void scrollBy(WebDriver driver, int vert, int horiz) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy("+vert+","+horiz+")");
 	}
 }

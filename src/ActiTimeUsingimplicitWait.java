@@ -18,7 +18,7 @@ public class ActiTimeUsingimplicitWait {
 		driver.findElement(By.name("pwd")).sendKeys("manager", Keys.ENTER);
 		
 		WebDriverWait ww = new WebDriverWait(driver, Duration.ofSeconds(10));// explicit wait or intelligent wait
-//		ww.until(ExpectedConditions.titleContains("act"));
+		//ww.until(ExpectedConditions.titleContains("act"));
 		//ww.until(ExpectedConditions.urlContains("actitime"));
 		ww.until(ExpectedConditions.urlToBe("https://demo.actitime.com/user/submit_tt.do"));
 		driver.findElement(By.id("logoutLink")).click();

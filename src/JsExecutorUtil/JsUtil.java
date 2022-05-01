@@ -80,4 +80,16 @@ public class JsUtil {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy("+vert+","+horiz+")");
 	}
+	public static void scrollTo(WebDriver driver, int vert, int horiz) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo("+vert+","+horiz+")");
+	}
+	public static void scrollToHeight(WebDriver driver, String script) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+	}
+	public static void scrollToWidth(WebDriver driver, String script) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,document.body.scrollWidth)");
+	}
 }

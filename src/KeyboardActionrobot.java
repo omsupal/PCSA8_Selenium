@@ -32,8 +32,6 @@ public class KeyboardActionrobot {
 		Thread.sleep(3000);
 		robo.keyPress(KeyEvent.VK_CONTROL);
 		robo.keyPress(KeyEvent.VK_V);
-//		robo.keyPress(KeyEvent.VK_CONTROL);
-//		robo.keyPress(KeyEvent.VK_T);
 
 	}
 

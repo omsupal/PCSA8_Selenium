@@ -10,7 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class KeyboardActionrobot {
 
-	public static void main(String[] args) throws AWTException {
+	public static void main(String[] args) throws AWTException, InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "./software/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.google.com/");
@@ -20,10 +20,16 @@ public class KeyboardActionrobot {
 		Actions a = new Actions(driver);
 		a.doubleClick(searchbox).perform();
 		robo.keyPress(KeyEvent.VK_CONTROL);
+		Thread.sleep(1000);
 		robo.keyPress(KeyEvent.VK_C);
+		Thread.sleep(1000);
 		robo.keyRelease(KeyEvent.VK_CONTROL );
+		Thread.sleep(1000);
 		robo.keyRelease(KeyEvent.VK_C );
-		
+		Thread.sleep(1000);
+		searchbox.clear();
+		a.doubleClick(searchbox).perform();
+		Thread.sleep(3000);
 		robo.keyPress(KeyEvent.VK_CONTROL);
 		robo.keyPress(KeyEvent.VK_V);
 //		robo.keyPress(KeyEvent.VK_CONTROL);

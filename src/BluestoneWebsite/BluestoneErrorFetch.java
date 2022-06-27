@@ -1,4 +1,5 @@
 package BluestoneWebsite;
+import java.time.Duration;
 import java.util.ArrayList;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,8 +11,10 @@ public class BluestoneErrorFetch {
 	public static void main(String[] args) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "./software/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://www.bluestone.com/");
 		driver.manage().window().maximize();
+		driver.findElement(By.className("confirm-btn")).click();
 		Actions a = new Actions(driver);
 		a.moveToElement(driver.findElement(By.xpath("//li[@class='menuparent']"))).perform();
 		driver.findElement(By.xpath("//a[contains(.,'Kadas')]/parent::li")).click();

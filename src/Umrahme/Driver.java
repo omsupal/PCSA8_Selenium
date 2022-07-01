@@ -2,6 +2,7 @@ package Umrahme;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Scanner;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -15,12 +16,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Driver {
 
 	public static void main(String[] args) throws InterruptedException {
-		int ch = 2;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number of child's");
+		int ch = sc.nextInt();
 		System.setProperty("webdriver.gecko.driver", "./software/geckodriver.exe");
-		FirefoxDriver driver = new FirefoxDriver();
+		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		WebDriverWait ww = new WebDriverWait(driver, Duration.ofSeconds(10));
 		driver.get("https://www.umrahme.com/home/en-sa");
 		ListingPage listing = new ListingPage(driver);
 		listing.getSelectDestination().click();
@@ -29,12 +31,8 @@ public class Driver {
 		listing.getStartDate().clear();
 		listing.getStartDate().sendKeys("01-07-2022", Keys.ENTER);
 			listing.getMakkahStay().click();
-			listing.getMeccaSearch().sendKeys("5", Keys.ENTER);
+			listing.getMeccaSearch().sendKeys("5", Keys.ENTER);		 
 
-//		if (listing.getMadinaStay().isEnabled()) {
-//			listing.getMadinaStay().click();
-//			listing.getMeccaSearch().sendKeys("5", Keys.ENTER);
-//		}
 		listing.getTravellersRooms().click();
 		Select adult = new Select(listing.getAdults());
 		adult.selectByVisibleText("4");

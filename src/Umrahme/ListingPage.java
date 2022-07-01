@@ -71,12 +71,12 @@ public class ListingPage {
 		public WebElement getSearchBox() {
 			return selctdest_search;
 		}
-//
+
 		public WebElement getStartDate(){
 
 			return startdate;
 		}
-//		
+		
 		public WebElement getMakkahStay(){
 
 			return makkah_stay;
@@ -85,33 +85,28 @@ public class ListingPage {
 		public WebElement getMeccaSearch() {
 			return mecca_search;
 		}
-//		
+		
 		public WebElement getMadinaStay(){
 
 			return madina_stay;
 		}
-//		
+	
 		public WebElement getTravellersRooms(){
 
 			return travellers_rooms;
 		}
-//
+
 		public WebElement getAdults(){
 
 			return adult_select;
 		}
-//
+
 		public WebElement getChilds(){
 
 			return child_select;
 		}
 		
-//		public WebElement getAge() {
-//			return child_age_select;
-//		}
-		
-//		
-//
+
 		public WebElement getCountryOfResidence(){
 
 			return countryofresidence;
@@ -120,7 +115,7 @@ public class ListingPage {
 		public WebElement getSearchCON() {
 			return searchCon;
 		}
-//
+
 		public WebElement getNationality(){
 
 			return nationality;

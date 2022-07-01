@@ -8,14 +8,16 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Driver {
 
 	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "./software/chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		int ch = 2;
+		System.setProperty("webdriver.gecko.driver", "./software/geckodriver.exe");
+		FirefoxDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		WebDriverWait ww = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -26,16 +28,22 @@ public class Driver {
 		listing.getStartDate().click();
 		listing.getStartDate().clear();
 		listing.getStartDate().sendKeys("01-07-2022", Keys.ENTER);
-		listing.getMakkahStay().click();
-		listing.getMeccaSearch().sendKeys("5", Keys.ENTER);
+			listing.getMakkahStay().click();
+			listing.getMeccaSearch().sendKeys("5", Keys.ENTER);
+
+//		if (listing.getMadinaStay().isEnabled()) {
+//			listing.getMadinaStay().click();
+//			listing.getMeccaSearch().sendKeys("5", Keys.ENTER);
+//		}
 		listing.getTravellersRooms().click();
-		Select adult= new Select(listing.getAdults());
-		adult.selectByVisibleText("5");
-		Select child= new Select(listing.getChilds());
-		child.selectByVisibleText("1");
-		
-		Select age = new Select(listing.getAge());
-		age.selectByIndex(3);
+		Select adult = new Select(listing.getAdults());
+		adult.selectByVisibleText("4");
+		Select child = new Select(listing.getChilds());
+		child.selectByVisibleText("" + ch + "");
+		for (int i = 1; i <= ch; i++) {
+			Select age = new Select(listing.getAge(i));
+			age.selectByIndex(3);
+		}
 		listing.getCountryOfResidence().click();
 		listing.getSearchCON().sendKeys("United States Of America", Keys.ENTER);
 		listing.getNationality().click();

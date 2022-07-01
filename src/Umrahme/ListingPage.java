@@ -1,5 +1,9 @@
 package Umrahme;
 
+
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,20 +26,26 @@ public class ListingPage {
 		@FindBy(xpath="//input[@class='select2-search__field']")
 		private WebElement mecca_search;
 		
-//		@FindBy(xpath="//span[@aria-labelledby='select2-madinaCityNight-container']")
-//		WebElement madina_stay;
+		@FindBy(xpath="//span[@aria-labelledby='select2-madinaCityNight-container']")
+		WebElement madina_stay;
 //
 		@FindBy(xpath="//div[@class='all-traveller show-occupancy']")
-		WebElement travellers_rooms;
+		private WebElement travellers_rooms;
 //
 		@FindBy(xpath="//label[contains(.,'Adults')]/preceding-sibling::select")
-		WebElement adult_select;
+		private WebElement adult_select;
 //
 		@FindBy(xpath="//label[contains(.,'Children')]/preceding-sibling::select")
-		WebElement child_select;
+		private WebElement child_select;
 		
-		@FindBy(xpath="//label[contains(.,'Age')]/preceding-sibling::select")
-		WebElement child_age_select;
+		private WebElement child_age_select;
+
+		
+		public WebElement getAge(int i) {
+			String str = "//ul[@class=\"age-wrap\"]/li["+i+"]/select";
+			child_age_select = driver.findElement(By.xpath(str));
+			return child_age_select;
+		}
 //		
 		@FindBy(xpath="//span[@aria-labelledby='select2-CountryOfResidence-container']/parent::span/parent::span") 
 		private WebElement countryofresidence;
@@ -76,10 +86,10 @@ public class ListingPage {
 			return mecca_search;
 		}
 //		
-//		public WebElement getMadinaStay(){
-//
-//			return madina_stay;
-//		}
+		public WebElement getMadinaStay(){
+
+			return madina_stay;
+		}
 //		
 		public WebElement getTravellersRooms(){
 
@@ -96,9 +106,11 @@ public class ListingPage {
 			return child_select;
 		}
 		
-		public WebElement getAge() {
-			return child_age_select;
-		}
+//		public WebElement getAge() {
+//			return child_age_select;
+//		}
+		
+//		
 //
 		public WebElement getCountryOfResidence(){
 
